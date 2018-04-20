@@ -66,7 +66,9 @@
 
         var heatmap = new google.maps.visualization.HeatmapLayer({
           data: heatMapData,
-          map: map
+          map: map,
+          opacity: 0.3,
+          radius: 10
         });
 
         flightPath.setMap(map);
