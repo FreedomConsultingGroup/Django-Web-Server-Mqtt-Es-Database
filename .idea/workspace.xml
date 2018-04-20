@@ -204,7 +204,14 @@
       <option name="project" value="LOCAL" />
       <updated>1524232728009</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Add heatmap">
+      <created>1524233734284</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1524233734284</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -239,7 +246,8 @@
     <MESSAGE value="Move index.html to static folder" />
     <MESSAGE value="Set debug to False" />
     <MESSAGE value="Change Colors" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change Colors" />
+    <MESSAGE value="Add heatmap" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add heatmap" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />

@@ -23,11 +23,20 @@
     <script>
       function initMap() {
         var mapData = [
-          {location: new google.maps.LatLng(39.18431, -76.85179), weight: 5},
+          {lat: 39.18431, lng: -76.85179},
           {lat: 39.1853, lng: -76.8507},
           {lat: 39.188, lng: -76.8514},
           {lat: 39.1915, lng: -76.8515},
-        ]
+        ];
+        var heatMapData = [];
+        var wght = 8
+        for(var i = 0; i < mapData.length; i++){
+          heatMapData[i] = {location: new google.maps.LatLng(mapData[i].lat, mapData[i].lng), weight: wght};
+          wght /= 2;
+          if(wght == 0){
+            wght = 1;
+          }
+        }
         var baltCenter = {lat: 39.3024, lng: -76.6145}
 
         var map = new google.maps.Map(document.getElementById('map'), {
