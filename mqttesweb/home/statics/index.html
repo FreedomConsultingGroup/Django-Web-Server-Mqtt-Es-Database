@@ -22,36 +22,42 @@
     <div id="map"></div>
     <script>
       function initMap() {
+        var mapData = [
+          {location: new google.maps.LatLng(39.18431, -76.85179), weight: 5},
+          {lat: 39.1853, lng: -76.8507},
+          {lat: 39.188, lng: -76.8514},
+          {lat: 39.1915, lng: -76.8515},
+        ]
         var baltCenter = {lat: 39.3024, lng: -76.6145}
+
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 10,
           center: baltCenter,
           mapTypeId: 'roadmap'
         });
 
-        var flightPlanCoordinates = [
-          {lat: 39.18431, lng: -76.85179},
-          {lat: 39.1853, lng: -76.8507},
-          {lat: 39.188, lng: -76.8514},
-          {lat: 39.1915, lng: -76.8515}
-        ];
         var flightPath = new google.maps.Polyline({
-          path: flightPlanCoordinates,
+          path: mapData,
           geodesic: true,
           strokeColor: '#0000FF',
           strokeOpacity: 1.0,
           strokeWeight: 3
         });
 
-        var circle = new google.maps.Circle({
-          strokeColor: '#FF0000',
-          strokeOpacity: 0.5,
-          strokeWeight: 1,
-          fillColor: '##f45942',
-          fillOpacity: 0.2,
-          map: map,
-          center: {lat: 39.18431, lng: -76.85179},
-          radius: 1000
+        // var circle = new google.maps.Circle({
+        //   strokeColor: '#FF0000',
+        //   strokeOpacity: 0.5,
+        //   strokeWeight: 1,
+        //   fillColor: '##f45942',
+        //   fillOpacity: 0.2,
+        //   map: map,
+        //   center: {lat: 39.18431, lng: -76.85179},
+        //   radius: 1000
+        // });
+
+        var heatmap = new google.maps.visualization.HeatmapLayer({
+          data: mapData,
+          map: map
         });
 
         flightPath.setMap(map);
