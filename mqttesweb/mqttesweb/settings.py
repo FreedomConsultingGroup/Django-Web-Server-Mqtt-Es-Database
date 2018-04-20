@@ -25,7 +25,7 @@ SECRET_KEY = open("/home/ubuntu/keys/djangosecret.key").read().replace('\n', '')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["cgood.fcgit.net"]
 
 
 # Application definition
