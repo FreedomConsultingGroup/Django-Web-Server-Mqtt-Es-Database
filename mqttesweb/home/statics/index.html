@@ -3,7 +3,7 @@
   <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <title>Chris Good Location History</title>
+    <title>Chris Good | Location History</title>
     <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
@@ -50,19 +50,9 @@
           geodesic: true,
           strokeColor: '#0000FF',
           strokeOpacity: 1.0,
-          strokeWeight: 3
+          strokeWeight: 3,
+          map: map
         });
-
-        // var circle = new google.maps.Circle({
-        //   strokeColor: '#FF0000',
-        //   strokeOpacity: 0.5,
-        //   strokeWeight: 1,
-        //   fillColor: '##f45942',
-        //   fillOpacity: 0.2,
-        //   map: map,
-        //   center: {lat: 39.18431, lng: -76.85179},
-        //   radius: 1000
-        // });
 
         var heatmap = new google.maps.visualization.HeatmapLayer({
           data: heatMapData,
@@ -70,8 +60,6 @@
           opacity: 0.5,
           radius: 40
         });
-
-        flightPath.setMap(map);
       }
     </script>
     <script async defer
