@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from requests_aws4auth import AWS4Auth
-from django.http import HttpRequest, QueryDict, Http404
+from django.http import HttpRequest, QueryDict, Http404, HttpResponseForbidden
+from requests import HTTPError
 from elasticsearch import Elasticsearch, RequestsHttpConnection
 
 # Create your views here.
@@ -81,9 +82,10 @@ def esGET(request: HttpRequest):
     tmax = None
 
     if "key" in request.GET:
-        key = request.GET["key"]
+        if invalidKey(request.GET["key"]):
+            return HttpResponseForbidden()
     else:
-        return Http404("Unspecified API Key")
+        return HttpResponseForbidden()
 
     if "tmin" in request.GET:
         tmin = request.GET["tmin"]
@@ -145,3 +147,7 @@ def esGET(request: HttpRequest):
         i += 1
     response += "]}"
     return response
+
+
+def invalidKey(key: str):
+    return False
